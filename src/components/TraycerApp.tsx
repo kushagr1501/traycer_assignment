@@ -153,7 +153,6 @@ export function TraycerApp() {
             }
         ];
         setDecisionHistory(newHistory);
-        // Save persistence
         localStorage.setItem(TRAYCER_HISTORY_KEY, JSON.stringify(newHistory));
 
         try {
@@ -179,9 +178,10 @@ export function TraycerApp() {
     };
 
     const showHeader = !plan && !options && !isLoading && decisionHistory.length === 0;
+    const shouldCenter = !options && !plan;
 
     return (
-        <div className="relative min-h-screen flex flex-col items-center justify-center p-6 overflow-hidden selection:bg-primary/30 w-full">
+        <div className={`relative min-h-screen flex flex-col items-center p-6 overflow-x-hidden overflow-y-auto selection:bg-primary/30 w-full ${shouldCenter ? 'justify-center' : 'justify-start pt-24'}`}>
 
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px] animate-pulse-slow" />

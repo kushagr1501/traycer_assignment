@@ -38,7 +38,6 @@ export function LandingPage({ onEnter }: { onEnter: () => void }) {
     const titleRef = useRef<HTMLHeadingElement>(null);
     const subRef = useRef<HTMLParagraphElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
@@ -61,24 +60,18 @@ export function LandingPage({ onEnter }: { onEnter: () => void }) {
     }, []);
 
     const handleEnter = () => {
-        gsap.to(containerRef.current, {
-            opacity: 0,
-            y: -50,
-            duration: 0.8,
-            ease: 'power3.in',
-            onComplete: onEnter
-        });
+        onEnter();
     };
 
     return (
-        <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden flex flex-col items-center justify-center">
+        <div className="relative w-full h-screen bg-black overflow-hidden flex flex-col items-center justify-center">
 
 
-            <div className="absolute inset-0 z-0 opacity-60">
+            <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
                 <Canvas>
                     <PerspectiveCamera makeDefault position={[0, 0, 8]} />
                     <Environment preset="dawn" />
-                    <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+                    <Stars radius={100} depth={50} count={2000} factor={4} saturation={0} fade speed={1} />
 
                     <ambientLight intensity={0.5} />
                     <pointLight position={[10, 10, 10]} intensity={2} color="#818cf8" />
@@ -102,7 +95,7 @@ export function LandingPage({ onEnter }: { onEnter: () => void }) {
                 <button
                     ref={buttonRef}
                     onClick={handleEnter}
-                    className="group relative px-8 py-4 bg-transparent border border-white/20 rounded-none overflow-hidden hover:border-white/50 transition-colors"
+                    className="group relative px-8 py-4 bg-transparent border border-white/20 rounded-none overflow-hidden hover:border-white/50 transition-colors cursor-pointer"
                 >
                     <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
                     <span className="relative z-10 font-mono text-sm tracking-widest text-white group-hover:text-black transition-colors duration-300">
