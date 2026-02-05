@@ -83,19 +83,19 @@ export function LandingPage({ onEnter }: { onEnter: () => void }) {
 
             <div className="z-10 text-center px-6 relative">
                 <div className="overflow-hidden mb-6">
-                    <h1 ref={titleRef} className="text-7xl md:text-9xl font-bold tracking-tighter text-white mix-blend-difference">
+                    <h1 ref={titleRef} className="opacity-0 text-7xl md:text-9xl font-bold tracking-tighter text-white mix-blend-difference">
                         TRAYCER
                     </h1>
                 </div>
 
-                <p ref={subRef} className="text-lg md:text-xl text-gray-400 font-mono tracking-[0.2em] uppercase mb-12">
+                <p ref={subRef} className="opacity-0 text-lg md:text-xl text-gray-400 font-mono tracking-[0.2em] uppercase mb-12">
                     The Planning Layer for Autonomous Agents
                 </p>
 
                 <button
                     ref={buttonRef}
                     onClick={handleEnter}
-                    className="group relative px-8 py-4 bg-transparent border border-white/20 rounded-none overflow-hidden hover:border-white/50 transition-colors cursor-pointer"
+                    className="opacity-0 group relative px-8 py-4 bg-transparent border border-white/20 rounded-none overflow-hidden hover:border-white/50 transition-colors cursor-pointer"
                 >
                     <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
                     <span className="relative z-10 font-mono text-sm tracking-widest text-white group-hover:text-black transition-colors duration-300">
