@@ -18,7 +18,7 @@ function FloatingCrystal() {
     return (
         <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
             <mesh ref={meshRef}>
-                <icosahedronGeometry args={[1.8, 0]} />
+                <icosahedronGeometry args={[2.4, 0]} />
                 <meshPhysicalMaterial
                     color="#ffffff"
                     roughness={0}
@@ -69,7 +69,7 @@ export function LandingPage({ onEnter }: { onEnter: () => void }) {
 
             <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
                 <Canvas>
-                    <PerspectiveCamera makeDefault position={[0, 0, 8]} />
+                    <PerspectiveCamera makeDefault position={[0, -0.4, 8.5]} />
                     <Environment preset="dawn" />
                     <Stars radius={100} depth={50} count={2000} factor={4} saturation={0} fade speed={1} />
 

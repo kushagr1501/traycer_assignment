@@ -112,7 +112,7 @@ export function TraycerApp() {
     };
 
 
-    // Handle the Skip or  Early Exit
+    // Handle the Skip or Early Exit
     const handleSkip = async () => {
         setIsLoading(true);
         setOptions(null);

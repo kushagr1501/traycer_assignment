@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { TraycerApp } from './components/TraycerApp';
 import { LandingPage } from './components/LandingPage';
 import { AnimatePresence, motion } from 'framer-motion';
-
+import { SmoothCursor } from "@/components/ui/smooth-cursor"
 function App() {
   const [showLanding, setShowLanding] = useState(true);
 
@@ -26,6 +26,7 @@ function App() {
             }}
           >
             <LandingPage onEnter={() => setShowLanding(false)} />
+            <SmoothCursor />
           </motion.div>
         )}
       </AnimatePresence>
