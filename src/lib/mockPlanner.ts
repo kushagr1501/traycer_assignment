@@ -89,7 +89,7 @@ export const MOCK_OPTIONS: StrategicOption[] = [
     }
 ];
 
-export async function generateOptions(prompt: string): Promise<StrategicOption[]> {
+export async function generateOptions(): Promise<StrategicOption[]> {
     await new Promise(resolve => setTimeout(resolve, 2000));
     return structuredClone(MOCK_OPTIONS);
 }

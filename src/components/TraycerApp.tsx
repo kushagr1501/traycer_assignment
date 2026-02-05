@@ -149,7 +149,7 @@ export function TraycerApp() {
             {
                 stepId: currentDecision.id,
                 stepTitle: currentDecision.title,
-                selectedOption: { id: 'skipped', title: 'Skipped', description: 'User decided to skip this decision', pros: [], cons: [], riskLevel: 'low' } // dummy
+                selectedOption: { id: 'skipped', title: 'Skipped', description: 'User decided to skip this decision', pros: [], cons: [], riskLevel: 'low' as const }
             }
         ];
         setDecisionHistory(newHistory);
